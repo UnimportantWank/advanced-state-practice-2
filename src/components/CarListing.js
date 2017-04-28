@@ -29,5 +29,8 @@ function CarListing(props) {
           </div>);
 }
 
-export default CarListing;
+ CarListing.propTypes = {
+  car: PropTypes.object.isRequired,
+ };
 
+export default CarListing;

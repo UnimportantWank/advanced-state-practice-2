@@ -2,9 +2,9 @@ import React, { Component } from "react";
 import CarListing from "./components/CarListing";
 
 class App extends Component {
-  constructor() {
-    super();
-    this. state = {
+  constructor(props) {
+    super(props);
+    this.state = {
       currentYear:null,
       currentMake:null,
     };
@@ -14,7 +14,7 @@ class App extends Component {
 
     return (
       <div >
-<div className="switcher-wrapper">	
+<div className="switcher-wrapper">
     <div className="demo_changer">
         <div className="demo-icon customBgColor"><i className="fa fa-cog fa-spin fa-2x"></i></div>
         <div className="form_holder">
@@ -175,7 +175,7 @@ class App extends Component {
           </ul>
         </div>
       </div>
-    
+
       <aside className="col-md-3 col-md-pull-9">
         <div className="sidebar_widget">
           <div className="widget_heading">
@@ -186,14 +186,9 @@ class App extends Component {
               <div className="form-group select">
                 <select className="form-control">
                   <option>Select Year</option>
-                  <option>2017</option>
-                  <option>2016</option>
-                  <option>2015</option>
-                  <option>2014</option>
-                  <option>2013</option>
-                  <option>2012</option>
-                  <option>2011</option>
-                  <option>2010</option>
+                  {allYears.map(year => {
+                    return(<option>year</option>);
+                  })}
                 </select>
               </div>
               <div className="form-group select">
@@ -212,14 +207,9 @@ class App extends Component {
               <div className="form-group select">
                 <select className="form-control">
                   <option>Select Brand</option>
-                  <option>Audi</option>
-                  <option>BMW</option>
-                  <option>Nissan</option>
-                  <option>Toyota</option>
-                  <option>Volvo</option>
-                  <option>Mazda</option>
-                  <option>Mercedes-Benz</option>
-                  <option>Lotus</option>
+                  {vehicleData.map(vehicle => {
+                    return(<option>{vehicle.title}</option>);
+                  })}
                 </select>
               </div>
               <div className="form-group select">
@@ -338,10 +328,10 @@ class App extends Component {
               <img src="./brand-logo-4.png" className="img-responsive" alt="image" /></a></div></div><div className="owl-item" style={{width: "204px"}}>
                 <div><a href="http://themes.webmasterdriver.net/carforyou/demo/listing-grid.html#"><img src="./brand-logo-5.png" className="img-responsive" alt="image" /></a></div>
                 </div></div></div>
-        
-        
-        
-        
+
+
+
+
       <div className="owl-controls clickable" style={{display: "block"}}><div className="owl-pagination"><div className="owl-page"><span className=""></span></div><div className="owl-page active"><span className=""></span></div></div></div></div>
     </div>
   </div>
