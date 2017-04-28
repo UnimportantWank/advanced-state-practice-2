@@ -187,7 +187,7 @@ class App extends Component {
                 <select className="form-control">
                   <option>Select Year</option>
                   {allYears.map(year => {
-                    return(<option>year</option>);
+                    return(<option>{year}</option>);
                   })}
                 </select>
               </div>
