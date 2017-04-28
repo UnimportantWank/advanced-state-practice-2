@@ -188,6 +188,10 @@ class App extends Component {
                   <option>Select Year</option>
                   {allYears.map(year => {
                     return(<option>{year}</option>);
+                    //on change
+                    <select onChange="select(e) =>{
+                      e.target=setState(currentYear);
+                    }"></select>
                   })}
                 </select>
               </div>
@@ -238,7 +242,8 @@ class App extends Component {
               </div>
               <div className="form-group">
                 <label className="form-label">Price Range ($) </label>
-                <div className="slider slider-horizontal" id=""><div className="slider-track"><div className="slider-track-low" style={{left: "0px", width: "15.9664%"}}></div>
+                {/* removed the extra slider */}
+                {/* <div className="slider slider-horizontal" id=""><div className="slider-track"><div className="slider-track-low" style={{left: "0px", width: "15.9664%"}}></div>
                 <div className="slider-selection" style={{left: "15.9664%", width: "67.2269%"}}></div>
                 <div className="slider-track-high" style={{right: "0px", width: "16.8067%"}}></div></div>
                 <div className="tooltip tooltip-main top" role="presentation" style={{left: "49.5798%", marginLeft: "-40px"}}>
@@ -249,7 +254,7 @@ class App extends Component {
                       <div className="tooltip-arrow"></div><div className="tooltip-inner">5000</div></div>
                       <div className="slider-handle min-slider-handle round" role="slider" aria-valuemin="50" aria-valuemax="6000" aria-valuenow="1000" tabindex="0" style={{left: "15.9664%"}}></div>
                       <div className="slider-handle max-slider-handle round" role="slider" aria-valuemin="50" aria-valuemax="6000" aria-valuenow="5000" tabindex="0" style={{left: "83.1933%"}}></div>
-                      </div>
+                      </div> */}
                       <input id="price_range" type="text" className="span2" value="1000,5000" data-slider-min="50" data-slider-max="6000" data-slider-step="5" data-slider-value="[1000,5000]" data-value="1000,5000" style={{display: "none"}} />
               </div>
               <div className="form-group select">
