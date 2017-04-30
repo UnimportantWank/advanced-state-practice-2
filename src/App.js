@@ -258,7 +258,7 @@ class App extends Component {
                       <div className="slider-handle min-slider-handle round" role="slider" aria-valuemin="50" aria-valuemax="6000" aria-valuenow="1000" tabindex="0" style={{left: "15.9664%"}}></div>
                       <div className="slider-handle max-slider-handle round" role="slider" aria-valuemin="50" aria-valuemax="6000" aria-valuenow="5000" tabindex="0" style={{left: "83.1933%"}}></div>
                       </div> */}
-                      <input id="price_range" type="text" className="span2" value="1000,5000" data-slider-min="50" data-slider-max="6000" data-slider-step="5" data-slider-value="[1000,5000]" data-value="1000,5000" style={{display: "none"}} />
+                      <input id="price_range" type="text" className="span2" value="1000,5000" data-slider-min="50" data-slider-max="100000" data-slider-step="5" data-slider-value="[1000,45000]" data-value="1000,5000" style={{display: "none"}} />
               </div>
               <div className="form-group select">
                 <select className="form-control">
