@@ -213,6 +213,9 @@ class App extends Component {
                   <option>Select Brand</option>
                   {vehicleData.map(vehicle => {
                     return(<option>{vehicle.title}</option>);
+                    <select onChange="select(e) =>{
+                      e.target=setState(currentMake);
+                    }"></select>
                   })}
                 </select>
               </div>
