@@ -12,6 +12,21 @@ class App extends Component {
   render() {
     const {carsForSale,vehicleData,allYears} = this.props.state;
 
+
+    let filteredCars = carsForSale;
+    if (this.state.currentYear !== null) {
+      filteredCars = filteredCars.filter(car => {
+            return car.year === this.state.currentYear;
+      });
+    }
+
+    if (this.state.currentMake !== null) {
+      filteredCars = filteredCars.filter(car => {
+            return car.make === this.state.currentMake;
+      });
+    }
+
+
     return (
       <div >
 <div className="switcher-wrapper">
@@ -163,7 +178,9 @@ class App extends Component {
           </div>
         </div>
         <div className="row">
-        <CarListing />
+        {filteredCars.map(car => {
+          return(<CarListing cars={car} />);
+        })}
         </div>
         <div className="pagination">
           <ul>
@@ -184,14 +201,14 @@ class App extends Component {
           <div className="sidebar_filter">
             <form action="http://themes.webmasterdriver.net/carforyou/demo/listing-grid.html#" method="get">
               <div className="form-group select">
-                <select className="form-control">
+
+                {/*on change: set state*/}
+                <select onChange={(e) =>{
+                  this.setState({currentYear: e.target.value});
+                }} className="form-control">
                   <option>Select Year</option>
                   {allYears.map(year => {
                     return(<option>{year}</option>);
-                    //on change
-                    <select onChange="select(e) =>{
-                      e.target=setState(currentYear);
-                    }"></select>
                   })}
                 </select>
               </div>
@@ -209,13 +226,14 @@ class App extends Component {
                 </select>
               </div>
               <div className="form-group select">
-                <select className="form-control">
+
+                {/*on change: set state*/}
+                <select onChange={(e) =>{
+                  this.setState({currentMake: e.target.value});
+                }} className="form-control">
                   <option>Select Brand</option>
                   {vehicleData.map(vehicle => {
-                    return(<option>{vehicle.title}</option>);
-                    <select onChange="select(e) =>{
-                      e.target=setState(currentMake);
-                    }"></select>
+                    return(<option value={vehicle.value}>{vehicle.title}</option>);
                   })}
                 </select>
               </div>
